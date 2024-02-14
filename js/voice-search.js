@@ -1,16 +1,17 @@
 
-const voiceSearch = document.querySelector(".voice-search");
+// const voiceSearch = document.querySelector(".voice-search");
 let microAceptado = false;
 
+/** Funciones flecha */
 const voiceSearchModalOpen = ()=>{
-	voiceSearch.style.display = "flex";
-	voiceSearch.style.animation = "aparecer 0.5s forwards";
+	document.querySelector(".voice-search").style.display = "flex";
+	document.querySelector(".voice-search").style.animation = "aparecer 0.5s forwards";
 	voiceRecognition();
 }
 
 
 const voiceSearchModalClose = () =>{
-	voiceSearch.style.animation = "desaparecer 0.25s forwards";
+	document.querySelector(".voice-search").style.animation = "desaparecer 0.25s forwards";
 	setTimeout(()=>{
 	    voiceSearch.style.display = "none";
 	},250)
@@ -37,6 +38,7 @@ const voiceRecognition = () =>{
     recognition.start();
 }
 
+/** Esto es nuevo */
 document.querySelector('.form__microphone-icon').addEventListener("click",voiceSearchModalOpen);
 document.querySelector(".voice-search__close-modal").addEventListener("click",voiceSearchModalClose);
 document.querySelector(".voice-search__microphone-border").addEventListener("click",voiceRecognition)
